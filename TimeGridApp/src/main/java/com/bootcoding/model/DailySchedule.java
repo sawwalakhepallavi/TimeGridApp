@@ -1,14 +1,18 @@
 package com.bootcoding.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
 @Data
 @Entity
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name="daily_schedule")
 public class DailySchedule {
     @Id
@@ -20,7 +24,7 @@ public class DailySchedule {
     @Column(name = "course_topic")
     private String courseTopic;
     private String category;
-    private boolean active;
+    private String active;
     @Column(name = "create_date")
     private Date createDate;
     private String createBy;
@@ -29,6 +33,7 @@ public class DailySchedule {
     private String modifiedBy;
 
     @ManyToOne
-    @JoinColumn(name="weekly_id", nullable=false)
+    @JoinColumn(name="weekly_id")
+           // nullable=false
     private WeeklySchedule weeklySchedule;
 }

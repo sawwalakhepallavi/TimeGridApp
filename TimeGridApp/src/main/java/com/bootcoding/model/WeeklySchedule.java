@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -34,7 +35,7 @@ public class WeeklySchedule{
     private Date modifiedDate;
     @Column(name = "modified_by")
     private String modifiedBy;
-    @OneToMany
-    private List<DailySchedule> dailyScheduleList;
+    @OneToMany(mappedBy = "weeklySchedule")
+    private List<DailySchedule> dailyScheduleList=new ArrayList<>();
 
 }
