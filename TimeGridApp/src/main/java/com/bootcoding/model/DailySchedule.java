@@ -32,8 +32,8 @@ public class DailySchedule {
     private Date modifiedDate;
     private String modifiedBy;
 
-    @ManyToOne
-    @JoinColumn(name="weekly_id")
-           // nullable=false
-    private WeeklySchedule weeklySchedule;
+//    @ManyToOne
+//    @JoinColumn(name="weekly_id")
+//           // nullable=false
+//    private WeeklySchedule weeklySchedule;
 }

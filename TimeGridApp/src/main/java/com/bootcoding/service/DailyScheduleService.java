@@ -36,7 +36,7 @@ public class DailyScheduleService {
                     .createBy("Bootcoding")
                     .modifiedDate(DateGenerator.modifiedDate())
                     .modifiedBy("Aman")
-                    .weeklySchedule(weeklyData.get())
+//                    .weeklySchedule(weeklyData.get())
                     .build();
             dailySchedules.add(dailySchedule);
         }

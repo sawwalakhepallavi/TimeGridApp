@@ -67,7 +67,7 @@ public class WeeklyController {
 
 
 
-    @PostMapping(" ")
+    @PostMapping("/saveByPostman")
     public String saveByPostman(@RequestBody WeeklySchedule weeklySchedule){
          weeklyScheduleService.saveByPostman(weeklySchedule);
          return "enter successfully";

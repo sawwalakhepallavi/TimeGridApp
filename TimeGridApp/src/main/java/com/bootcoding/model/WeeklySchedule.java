@@ -35,7 +35,8 @@ public class WeeklySchedule{
     private Date modifiedDate;
     @Column(name = "modified_by")
     private String modifiedBy;
-    @OneToMany(mappedBy = "weeklySchedule")
+    @OneToMany(cascade =CascadeType.ALL, targetEntity = DailySchedule.class)
+//    mappedBy = "weeklySchedule"
     private List<DailySchedule> dailyScheduleList=new ArrayList<>();
 
 }
