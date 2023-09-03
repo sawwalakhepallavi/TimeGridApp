@@ -30,12 +30,12 @@ public class WeeklyController {
     }
 
 
-    @PostMapping("/week_schedule")
-    public String generateWeeklySchedule(@RequestParam("value") int value, @RequestParam("courseId") int id)
-    {
-        weeklyScheduleService.save(value, id);
-        return "true" ;
-    }
+//    @PostMapping("/week_schedule")
+//    public String generateWeeklySchedule(@RequestParam("value") int value, @RequestParam("courseId") int id)
+//    {
+//        weeklyScheduleService.save(value, id);
+//        return "true" ;
+//    }
 
 
     @GetMapping("/getAll")
@@ -71,6 +71,13 @@ public class WeeklyController {
     public String saveByPostman(@RequestBody WeeklySchedule weeklySchedule){
          weeklyScheduleService.saveByPostman(weeklySchedule);
          return "enter successfully";
+    }
+
+
+    @PostMapping("/weekli-daily-inserted/{size}")
+    public String saveByRandom(@PathVariable int size){
+        weeklyScheduleService.save(size);
+        return "data inserted properly";
     }
 
 

@@ -17,9 +17,9 @@ public class DailyController {
 
 
 
-    @PostMapping("/Daily-Schedule/{week}/{size}")
-    public String insertData(@PathVariable("week") int id,@PathVariable int size){
-        dailyScheduleService.insertData(id,size);
+    @PostMapping("/Daily-Schedule/{size}")
+    public String insertData(@PathVariable int size){
+        dailyScheduleService.insertData(size);
         return "successfully";
     }
 

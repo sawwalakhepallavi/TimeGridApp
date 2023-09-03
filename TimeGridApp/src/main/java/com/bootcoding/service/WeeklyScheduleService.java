@@ -1,5 +1,6 @@
 package com.bootcoding.service;
 
+import com.bootcoding.model.DailySchedule;
 import com.bootcoding.model.WeeklySchedule;
 import com.bootcoding.repository.WeeklyScheduleRepo;
 import com.bootcoding.util.*;
@@ -14,6 +15,9 @@ import java.util.Optional;
 public class WeeklyScheduleService {
     @Autowired
     private WeeklyScheduleRepo weeklyScheduleRepo;
+
+//    @Autowired
+//    private DailyScheduleService dailyScheduleService;
 
 
 
@@ -41,11 +45,14 @@ public class WeeklyScheduleService {
         return courseId ;
     }
 
-    public List<WeeklySchedule> save(int value,int courseId) {
+//    public List<DailySchedule>
+
+    public List<WeeklySchedule> save(int value) {
         List <WeeklySchedule>list=new ArrayList<>();
+//        List< DailySchedule> dailySchedules=new ArrayList<>();
         for (int i = 0; i < value; i++) {
             WeeklySchedule weeklySchedule = WeeklySchedule.builder()
-                    .courseId(courseId)
+                    .courseId(2)
                     .weekNumber(i+1)
                     .title(TitleGenerator.courseTitle())
                     .description("The Java Programming Fundamentals course ")
@@ -57,6 +64,7 @@ public class WeeklyScheduleService {
 //                    .createBY("bootcoding")
                     .modifiedDate(DateGenerator.modifiedDate())
                     .modifiedBy("mohan")
+//                    .dailyScheduleList(dailyScheduleService.insertData(5))
                     .build();
             list.add(weeklySchedule);
         }
